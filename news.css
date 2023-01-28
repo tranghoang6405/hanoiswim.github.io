@@ -1,0 +1,156 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: 0;
+}
+
+.menu {
+    display: flex;
+    flex-direction: row;
+    padding: 24px 24px;
+    justify-content: space-between;
+    border-bottom: 3px solid #000080;
+    background-color: #87cefa;
+    color: #000080;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+}
+
+.menu h1 {
+    letter-spacing: 1px;
+    font-weight: 400;
+    padding-bottom: 8px;
+    cursor: pointer;
+}
+
+.menu p {
+    font-weight: 100;
+}
+
+.menu2 {
+    display: flex;
+    flex-direction: row;
+}
+
+.menu2 span {
+    margin: 10px 0px;
+    padding: 8px 8px;
+    cursor: pointer;
+}
+
+.menu2 span:hover {
+    border-radius: 60%;
+    background: #e0ffff;
+}
+
+.menu .property {
+    display: flex;
+    flex-direction: row;
+    padding: 16px 16px;
+}
+
+.menu2 .property > li {
+    margin: 0px 8px;
+    padding: 8px 12px;
+    text-transform: uppercase;
+    font-weight: 200;
+    cursor: pointer;
+    font-size: 17px;
+    list-style-type: none;
+}
+
+.menu2 .property > li:hover {
+    color: #e0ffff;
+}
+
+.home_animation {
+    text-align: left;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    background-color: azure;
+    color: rgb(16, 96, 132);
+}
+
+.home_animation .slide1 {
+    text-align: center;
+    padding: 12px 16px;
+    animation-duration: 3s;
+  animation-name: slidein;
+  animation-iteration-count: infinite;
+}
+
+/* @keyframes slidein {
+    from {
+      margin-right: 100%;
+      width: 300%;
+    }
+  
+    to {
+      margin-right: 0%;
+      width: 100%;
+    }
+  } */
+
+/*Time for the CSS*/
+* {margin: 0; padding: 0;}
+body {background: rgb(157, 170, 237);}
+
+.slider{
+    width: 640px; /*Same as width of the large image*/
+    position: relative;
+    /*Instead of height we will use padding*/
+    padding-top: 320px; /*That helps bring the labels down*/
+    
+    margin: 100px auto;
+    
+    /*Lets add a shadow*/
+    box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.75);
+}
+
+
+/*Last thing remaining is to add transitions*/
+.slider > img{
+    position: absolute;
+    left: 0; top: 0;
+    transition: all 0.5s;
+}
+
+.slider input[name='slide_switch'] {
+    display: none;
+}
+
+.slider label {
+    /*Lets add some spacing for the thumbnails*/
+    margin: 18px 0 0 18px;
+    border: 3px solid #999;
+    
+    float: left;
+    cursor: pointer;
+    transition: all 0.5s;
+    
+    /*Default style = low opacity*/
+    opacity: 0.6;
+}
+
+.slider label img{
+    display: block;
+}
+
+/*Time to add the click effects*/
+.slider input[name='slide_switch']:checked+label {
+    border-color: #666;
+    opacity: 1;
+}
+/*Clicking any thumbnail now should change its opacity(style)*/
+/*Time to work on the main images*/
+.slider input[name='slide_switch'] ~ img {
+    opacity: 0;
+    transform: scale(1.1);
+}
+/*That hides all main images at a 110% size
+On click the images will be displayed at normal size to complete the effect
+*/
+.slider input[name='slide_switch']:checked+label+img {
+    opacity: 1;
+    transform: scale(1);
+}
+/*Clicking on any thumbnail now should activate the image related to it*/
